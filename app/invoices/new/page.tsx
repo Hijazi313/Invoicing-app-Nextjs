@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { createAction } from "@/app/actions";
 import { SyntheticEvent, useState } from "react";
 import Form from "next/form";
+import Container from "@/components/Container";
 export default function Home() {
   const [isReady, setIsReady] = useState(true);
   const handleOnSubmit = async (event: SyntheticEvent) => {
@@ -20,10 +21,11 @@ export default function Home() {
     // console.log("Hye")
   };
 
-  // console.dir(results)
   return (
-    <main className="flex flex-col justify-center h-full text-center gap-6 max-w-5xl mx-auto my-12 ">
-      <div className="flex justify-between">
+    <main className="h-full ">
+      <Container>
+
+      <div className="flex justify-between mb-6">
         <h1 className="text-3xl font-semibold">Create Invoice</h1>
       </div>
       <Form
@@ -64,6 +66,8 @@ export default function Home() {
           <Button className="w-full font-semibold">Submit</Button>
         </div>
       </Form>
+      </Container>
+
     </main>
   );
 }
