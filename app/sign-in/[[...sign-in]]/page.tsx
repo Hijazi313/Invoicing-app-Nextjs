@@ -66,26 +66,12 @@ export default function SignInPage() {
               Sign In
             </Button>
           </SignIn.Action>
-          <p className="text-center text-sm text-zinc-500">
-            No account?{" "}
-            <Link
-              href={String(process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL)}
-              className="font-medium text-zinc-950 decoration-zinc-950/20 underline-offset-4 outline-none hover:text-zinc-700 hover:underline focus-visible:underline"
-            >
-              Create an account
-            </Link>
-          </p>
-        </SignIn.Step>
-      {/*  */}
-        <SignIn.Step
-          name="start"
-        >
-          <Clerk.GlobalError className="block text-sm text-red-400" />
-          <div className="space-y-2">
-            <Clerk.Connection
+          <Clerk.Connection
               name="google"
-              className="flex w-full items-center justify-center gap-x-3 rounded-md bg-neutral-700 px-3.5 py-1.5 text-sm font-medium text-white shadow-[0_1px_0_0_theme(colors.white/5%)_inset,0_0_0_1px_theme(colors.white/2%)_inset] outline-none hover:bg-gradient-to-b hover:from-white/5 hover:to-white/5 focus-visible:outline-[1.5px] focus-visible:outline-offset-2 focus-visible:outline-white active:bg-gradient-to-b active:from-black/20 active:to-black/20 active:text-white/70"
+              className="flex w-full items-center justify-center  py-1.5 text-sm font-medium "
             >
+              <Button className="w-full font-bold" variant="outline" >
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -99,10 +85,29 @@ export default function SignInPage() {
                 />
               </svg>
               Login with Google
+
+              </Button>
             </Clerk.Connection>
+          <p className="text-center text-sm text-zinc-500">
+            No account?{" "}
+            <Link
+              href={String(process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL)}
+              className="font-medium text-zinc-950 decoration-zinc-950/20 underline-offset-4 outline-none hover:text-zinc-700 hover:underline focus-visible:underline"
+            >
+              Create an account
+            </Link>
+          </p>
+        </SignIn.Step>
+      {/*  */}
+        {/* <SignIn.Step
+          name="start"
+        >
+          <Clerk.GlobalError className="block text-sm text-red-400" />
+          <div className="space-y-2">
+            j
           </div>
           
-        </SignIn.Step>
+        </SignIn.Step> */}
       </SignIn.Root>
     </div>
   );
